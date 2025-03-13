@@ -11,8 +11,8 @@ TagManager:
   - player
   - Water
   - UI
-  - 
-  - 
+  - Ground
+  - Climbing
   - 
   - 
   - 
@@ -40,6 +40,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Platform
+    uniqueID: 1182307763
+    locked: 0
+  - name: Climbing
+    uniqueID: 1400631449
     locked: 0
   - name: player
     uniqueID: 3162598177
