@@ -6,7 +6,8 @@ using System;
 using UnityEditor.Tilemaps;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float runSpeed = 3f;
+    [SerializeField] float runSpeed = 10f;
+    [SerializeField] float jumpSpeed = 5f;
     Vector2 moveInput;
     Rigidbody2D myRigidbody;
     Animator myAnimator;
@@ -36,6 +37,14 @@ public class PlayerMovement : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("isRunning ", playerHasHorizontalSpeed);
     }
+    void OnJump(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            myRigidbody.velocity +=new Vector2(0f,jumpSpeed);
+        }
+    }
+    
         void FlipSprite()
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
